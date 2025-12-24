@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evonyte - Admin App Distribution</title>
+    <title>Evonyte - Coming Soon</title>
     <style>
         * {
             margin: 0;
@@ -22,280 +22,104 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 600px;
             background: white;
             border-radius: 20px;
             padding: 60px 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 4em;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #333;
-            margin-bottom: 10px;
-            text-align: center;
+            margin-bottom: 20px;
         }
 
         .subtitle {
             font-size: 1.2em;
             color: #666;
-            text-align: center;
             margin-bottom: 40px;
         }
 
-        .status {
-            background: #f0f9ff;
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
-            border-radius: 8px;
+        .coming-soon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            display: inline-block;
             margin-bottom: 30px;
         }
 
-        .status h3 {
-            color: #1e40af;
-            margin-bottom: 10px;
-        }
-
-        .status .version {
-            font-size: 2em;
-            font-weight: bold;
-            color: #3b82f6;
-            margin: 10px 0;
-        }
-
-        .status .info {
+        .description {
             color: #64748b;
-            font-size: 0.9em;
-            margin-top: 10px;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
 
-        .download-btn {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px 40px;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 12px;
-            margin: 20px 0;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .download-btn:active {
-            transform: translateY(0);
-        }
-
-        .download-btn.disabled {
-            background: #cbd5e1;
-            cursor: not-allowed;
-        }
-
-        .changelog {
+        .contact {
             background: #f8fafc;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             margin-top: 30px;
         }
 
-        .changelog h3 {
+        .contact h3 {
             color: #334155;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .changelog p {
-            color: #64748b;
-            line-height: 1.6;
+        .contact a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #94a3b8;
-        }
-
-        .spinner {
-            border: 3px solid #f3f4f6;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .error {
-            background: #fee2e2;
-            border-left: 4px solid #ef4444;
-            padding: 20px;
-            border-radius: 8px;
-            color: #991b1b;
+        .contact a:hover {
+            text-decoration: underline;
         }
 
         footer {
-            text-align: center;
             margin-top: 40px;
             color: #94a3b8;
             font-size: 0.9em;
-        }
-
-        .auth-form {
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
-
-        .auth-form input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-
-        .auth-form input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .auth-form button {
-            width: 100%;
-            background: #667eea;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .auth-form button:hover {
-            background: #5568d3;
-        }
-
-        .hidden {
-            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Evonyte</h1>
-        <p class="subtitle">Admin App Distribution Center</p>
+        <div class="logo">🚀</div>
+        <h1>Evonyte</h1>
+        <p class="subtitle">Privacy-First AI Fitness Platform</p>
 
-        <!-- Loading State -->
-        <div id="loading" class="loading">
-            <div class="spinner"></div>
-            <p>Loading latest version...</p>
+        <div class="coming-soon">
+            ⏳ Coming Soon
         </div>
 
-        <!-- Error State -->
-        <div id="error" class="error hidden">
-            <strong>Error:</strong> <span id="error-message"></span>
-        </div>
+        <p class="description">
+            Pracujemy nad czymś wyjątkowym.<br>
+            Wkrótce uruchomimy nową platformę fitness z AI,<br>
+            która dba o Twoją prywatność.
+        </p>
 
-        <!-- No API key needed - direct GitHub download -->
-
-        <!-- Main Content -->
-        <div id="content" class="hidden">
-            <!-- Status -->
-            <div class="status">
-                <h3>📦 Latest Version</h3>
-                <div class="version" id="version">v?.?.?</div>
-                <div class="info">
-                    <strong>File:</strong> <span id="file-name">-</span><br>
-                    <strong>Size:</strong> <span id="file-size">-</span><br>
-                    <strong>Released:</strong> <span id="released-at">-</span>
-                </div>
-            </div>
-
-            <!-- Download Button -->
-            <button id="download-btn" class="download-btn" onclick="downloadLatest()">
-                ⬇️ Download Latest Version
-            </button>
-
-            <!-- Changelog -->
-            <div class="changelog">
-                <h3>📝 What's New</h3>
-                <p id="changelog">Loading changelog...</p>
-            </div>
+        <div class="contact">
+            <h3>📧 Kontakt</h3>
+            <p>
+                Pytania? Napisz do nas:<br>
+                <a href="mailto:contact@evonyte.com">contact@evonyte.com</a>
+            </p>
         </div>
 
         <footer>
             <p>&copy; 2025 Evonyte. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.85em;">
-                <a href="admin.html" style="color: #667eea; text-decoration: none;">Admin Panel</a>
-            </p>
         </footer>
     </div>
-
-    <script>
-        // GitHub Releases integration
-        const GITHUB_REPO = 'fymruti/evonyte-distribution';
-        const LATEST_VERSION = '1.0.0';
-        const DOWNLOAD_URL = `https://github.com/${GITHUB_REPO}/releases/download/v${LATEST_VERSION}/evonyte-admin-v${LATEST_VERSION}-windows.zip`;
-
-        async function loadLatestVersion() {
-            try {
-                // Show version info
-                document.getElementById('version').textContent = `v${LATEST_VERSION}`;
-                document.getElementById('file-name').textContent = `evonyte-admin-v${LATEST_VERSION}-windows.zip`;
-                document.getElementById('file-size').textContent = '10.5 MB';
-                document.getElementById('released-at').textContent = '24.12.2025';
-                document.getElementById('changelog').innerHTML = `
-                    <strong>First Release!</strong><br><br>
-                    ✅ Auto-connect to Brain PC (brainpc.local)<br>
-                    ✅ Auto-update mechanism<br>
-                    ✅ Real-time system monitoring<br>
-                    ✅ Professional UI
-                `;
-
-                // Show content
-                document.getElementById('loading').classList.add('hidden');
-                document.getElementById('content').classList.remove('hidden');
-            } catch (error) {
-                showError(error.message);
-            }
-        }
-
-        function downloadLatest() {
-            // Direct download from GitHub Releases
-            window.location.href = DOWNLOAD_URL;
-        }
-
-        function formatBytes(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-        }
-
-        function showError(message) {
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('error-message').textContent = message;
-            document.getElementById('error').classList.remove('hidden');
-        }
-
-        // Load on page load
-        window.addEventListener('DOMContentLoaded', loadLatestVersion);
-    </script>
 </body>
 </html>
