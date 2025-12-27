@@ -1,0 +1,82 @@
+═══════════════════════════════════════════════════════════════
+  DEPLOY EDGE FUNCTIONS DO SUPABASE (5 minut)
+═══════════════════════════════════════════════════════════════
+
+Masz 4 Edge Functions do wdrożenia. Każda to 2 kliknięcia + paste.
+
+───────────────────────────────────────────────────────────────
+FUNKCJA 1/4: health
+───────────────────────────────────────────────────────────────
+
+1. Idź na: https://supabase.com/dashboard/project/brobuwegghwjhxlptffk/functions
+
+2. Kliknij "Create a new function"
+
+3. Wypełnij:
+   Name: health
+
+4. W edytorze USUŃ wszystko i wklej zawartość z:
+   D:\evonyte_desktop\evonyte-distribution\supabase\functions\health\index.ts
+
+5. Kliknij "Deploy function"
+
+───────────────────────────────────────────────────────────────
+FUNKCJA 2/4: latest
+───────────────────────────────────────────────────────────────
+
+1. Kliknij "Create a new function"
+
+2. Wypełnij:
+   Name: latest
+
+3. Wklej zawartość z:
+   D:\evonyte_desktop\evonyte-distribution\supabase\functions\latest\index.ts
+
+4. Kliknij "Deploy function"
+
+───────────────────────────────────────────────────────────────
+FUNKCJA 3/4: download
+───────────────────────────────────────────────────────────────
+
+1. Kliknij "Create a new function"
+
+2. Wypełnij:
+   Name: download
+
+3. Wklej zawartość z:
+   D:\evonyte_desktop\evonyte-distribution\supabase\functions\download\index.ts
+
+4. Kliknij "Deploy function"
+
+───────────────────────────────────────────────────────────────
+FUNKCJA 4/4: upload
+───────────────────────────────────────────────────────────────
+
+1. Kliknij "Create a new function"
+
+2. Wypełnij:
+   Name: upload
+
+3. Wklej zawartość z:
+   D:\evonyte_desktop\evonyte-distribution\supabase\functions\upload\index.ts
+
+4. Kliknij "Deploy function"
+
+═══════════════════════════════════════════════════════════════
+TESTOWANIE (po wdrożeniu wszystkich 4 funkcji)
+═══════════════════════════════════════════════════════════════
+
+Otwórz w przeglądarce:
+
+✅ Health check:
+https://brobuwegghwjhxlptffk.supabase.co/functions/v1/health
+
+Powinieneś zobaczyć:
+{"status":"online","service":"Evonyte Distribution System",...}
+
+✅ Latest version (po uploadowaniu pierwszej wersji):
+https://brobuwegghwjhxlptffk.supabase.co/functions/v1/latest
+
+═══════════════════════════════════════════════════════════════
+PO WDROŻENIU WSZYSTKICH FUNKCJI - NAPISZ MI "FUNCTIONS GOTOWE"
+═══════════════════════════════════════════════════════════════
