@@ -1,7 +1,7 @@
 // ============================================
 // LATEST VERSION ENDPOINT
 // GET /latest
-// Returns hardcoded v1.0.24 info
+// Returns hardcoded v1.0.25 info
 // ============================================
 
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
@@ -27,12 +27,12 @@ serve(async (req: Request) => {
 
   try {
     const response = {
-      version: "1.0.24",
-      file_name: "evonyte-admin-v1.0.24-windows.zip",
-      file_size: 16777216,
-      changelog: "🎨 UI Refresh: Removed retro Win98 styling, full Material Design 3\n🔓 Simplified: Removed authentication system, direct Brain PC access\n⚡ Performance: Cleaner codebase, faster startup\n✨ Professional: Modern, clean interface for Brain PC management\n🧹 Code cleanup: Removed unused auth dependencies",
-      released_at: "2025-12-30",
-      download_url: "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.24/evonyte-admin-v1.0.24-windows.zip",
+      version: "1.0.25",
+      file_name: "evonyte-admin-v1.0.25-windows.zip",
+      file_size: 13631488,
+      changelog: "🎨 Material Design 3: Win98 compatibility layer for smooth transition\n🔧 Brain PC Widgets: Fixed monitoring widgets imports\n📄 PDF Export: Service stubbed for Windows build compatibility\n⚡ Build System: Clean dependency resolution",
+      released_at: "2025-12-31",
+      download_url: "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.25/evonyte-admin-v1.0.25-windows.zip",
     };
 
     return new Response(JSON.stringify(response), {
