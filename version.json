@@ -1,12 +1,11 @@
 {
-  "version": "1.0.34",
-  "build": 34,
+  "version": "1.0.35",
+  "build": 35,
   "releaseDate": "2025-12-31",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.34/evonyte-admin-v1.0.34-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.35/evonyte-admin-v1.0.35-windows.zip",
   "changelog": [
-    "Auto-update with self-restart - app updates itself and restarts automatically",
-    "Update progress dialog with download percentage",
-    "Storage card shows all disks in single card"
+    "Auto-update test release",
+    "Verifying self-update and restart functionality"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
