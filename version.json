@@ -1,13 +1,12 @@
 {
-  "version": "1.0.51",
-  "build": 51,
+  "version": "1.0.52",
+  "build": 52,
   "releaseDate": "2026-01-01",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.51/evonyte-admin-v1.0.51-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.52/evonyte-admin-v1.0.52-windows.zip",
   "changelog": [
-    "NEW: 3-Stage Pipeline (A: Pre-check 2.5M, B: Main 89M, C: Heavy 120M)",
-    "NEW: Stage A - MobileNetV3-Small for quality gate",
-    "NEW: Stage C - EfficientNetV2-L for hard cases",
-    "UI: Model selector with all 3 stages"
+    "UI: Dual dropdown - wybor CO trenowac + JAK (intensywnosc)",
+    "UI: Info badge z parametrami modelu",
+    "UI: Auto-epoki dla intensywnosci (30/100/150)"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
