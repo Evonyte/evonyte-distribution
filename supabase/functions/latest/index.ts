@@ -50,12 +50,12 @@ serve(async (req: Request) => {
         // Hardcoded fallback when database is empty
         // UPDATE THIS when deploying new versions manually
         const hardcodedFallback = {
-          version: "1.0.27",
-          file_name: "evonyte-admin-v1.0.27-windows.zip",
-          file_size: 12001979,
-          changelog: "Modular architecture with NavigationRail, Modern dark theme (AdminTheme), New Settings screen with Brain PC config, Updated Dashboard and Quick Actions design, Auto-update button in Settings",
-          released_at: "2025-12-31",
-          download_url: "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.27/evonyte-admin-v1.0.27-windows.zip",
+          version: "1.0.48",
+          file_name: "evonyte-admin-v1.0.48-windows.zip",
+          file_size: 25000000,
+          changelog: "Real GPU memory display, batch progress tracking, improved ETA calculation",
+          released_at: "2026-01-01",
+          download_url: "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.48/evonyte-admin-v1.0.48-windows.zip",
         };
 
         return new Response(
