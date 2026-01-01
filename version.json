@@ -1,12 +1,12 @@
 {
-  "version": "1.0.48",
-  "build": 48,
+  "version": "1.0.49",
+  "build": 49,
   "releaseDate": "2026-01-01",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.48/evonyte-admin-v1.0.48-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.49/evonyte-admin-v1.0.49-windows.zip",
   "changelog": [
-    "Real GPU memory display (torch.cuda.memory_allocated)",
-    "Batch progress tracking within epochs",
-    "Improved ETA calculation"
+    "Fix: Start button shows after Stop/Cancel/Error",
+    "Fix: Real GPU memory from nvidia-smi (9GB instead of 1.3GB)",
+    "Fix: API reads GPU data from status file"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
