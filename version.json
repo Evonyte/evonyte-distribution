@@ -1,12 +1,13 @@
 {
-  "version": "1.0.50",
-  "build": 50,
+  "version": "1.0.51",
+  "build": 51,
   "releaseDate": "2026-01-01",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.50/evonyte-admin-v1.0.50-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.51/evonyte-admin-v1.0.51-windows.zip",
   "changelog": [
-    "Fix: Delete jobs from queue (pending, cancelled, completed)",
-    "Fix: Save checkpoint works when paused",
-    "UI: Delete button shows for all non-running jobs"
+    "NEW: 3-Stage Pipeline (A: Pre-check 2.5M, B: Main 89M, C: Heavy 120M)",
+    "NEW: Stage A - MobileNetV3-Small for quality gate",
+    "NEW: Stage C - EfficientNetV2-L for hard cases",
+    "UI: Model selector with all 3 stages"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
