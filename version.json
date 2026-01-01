@@ -1,11 +1,11 @@
 {
-  "version": "1.0.45",
-  "build": 45,
+  "version": "1.0.46",
+  "build": 46,
   "releaseDate": "2026-01-01",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.45/evonyte-admin-v1.0.45-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.46/evonyte-admin-v1.0.46-windows.zip",
   "changelog": [
-    "Fix: Auto-update now works without Updater.exe",
-    "Mini-Vision: ConvNeXt-Base model (89M parameters)"
+    "Dark theme UI with Mini-Vision Training panel",
+    "Sidebar navigation, colorful control buttons"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
