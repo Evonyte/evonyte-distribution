@@ -1,13 +1,13 @@
 {
-  "version": "1.0.16",
-  "build": 17,
+  "version": "1.0.17",
+  "build": 18,
   "releaseDate": "2026-01-03",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.16/evonyte-coach-v1.0.16-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.17/evonyte-coach-v1.0.17-windows.zip",
   "changelog": [
-    "✅ DODAWANIE SIŁOWNI - przycisk + w sekcji Siłownie",
-    "📜 SIDEBAR BEZ SCROLLA - auto-dopasowanie do fullscreen (>800px)",
-    "📅 PEŁNE NAZWY DNI - 'Poniedziałek' zamiast 'Pt' w dialogu edycji",
-    "🎨 DIALOG DODAWANIA - nazwa, adres, wybór koloru (8 opcji)"
+    "🎨 KOLORY DNI - przeszłe dni przyciemnione (szare)",
+    "👁️ LEPSZY KONTRAST - łatwiej odróżnić przeszłość od przyszłości",
+    "📅 DZISIEJSZY DZIEŃ - cyan highlight (bez zmian)",
+    "⚪ PRZYSZŁE DNI - białe (normalne)"
   ],
   "mandatory": false,
   "minVersion": "0.1.0"
