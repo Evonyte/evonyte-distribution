@@ -1,16 +1,14 @@
 {
-  "version": "1.0.7",
-  "build": 8,
+  "version": "1.0.8",
+  "build": 9,
   "releaseDate": "2026-01-03",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.7/evonyte-coach-v1.0.7-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.8/evonyte-coach-v1.0.8-windows.zip",
   "changelog": [
-    "🗓️ SYSTEM REZERWACJI - pełna funkcjonalność kalendarza",
-    "📅 Kalendarz tygodniowy z zarządzaniem dostępnością",
-    "🏋️ Zarządzanie siłowniami (wiele lokalizacji)",
-    "⏰ Grafik pracy (dni robocze, godziny dostępności)",
-    "🎯 Typy slotów (różne długości treningów: 45/60/90 min)",
-    "✅ Akceptacja/odrzucanie rezerwacji od klientów",
-    "🚫 Blokady czasowe (urlopy, niedostępność)"
+    "✅ FIX NAWIGACJI - Kalendarz jako glowna zakladka (nie ikona)",
+    "✅ USUNIETO 'Plany' - niepotrzebne (plany tworzy sie po ankiecie)",
+    "📅 Kalendarz teraz w glownym menu (Dashboard > Klienci > Kalendarz > Chat > Statystyki > Ustawienia)",
+    "🔔 Badge z liczba pending bookings na zakladce Kalendarz",
+    "🗓️ Pelna funkcjonalnosc kalendarza zachowana"
   ],
   "mandatory": false,
   "minVersion": "0.1.0"
