@@ -1,14 +1,13 @@
 {
-  "version": "1.0.8",
-  "build": 9,
+  "version": "1.0.9",
+  "build": 10,
   "releaseDate": "2026-01-03",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.8/evonyte-coach-v1.0.8-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.9/evonyte-coach-v1.0.9-windows.zip",
   "changelog": [
-    "✅ FIX NAWIGACJI - Kalendarz jako glowna zakladka (nie ikona)",
-    "✅ USUNIETO 'Plany' - niepotrzebne (plany tworzy sie po ankiecie)",
-    "📅 Kalendarz teraz w glownym menu (Dashboard > Klienci > Kalendarz > Chat > Statystyki > Ustawienia)",
-    "🔔 Badge z liczba pending bookings na zakladce Kalendarz",
-    "🗓️ Pelna funkcjonalnosc kalendarza zachowana"
+    "✅ FIX KALENDARZA - teraz dziala poprawnie w zakladce",
+    "🔧 Naprawiono rendering kalendarza (nie bylo widoczne)",
+    "📅 Custom header w trybie zakladki (nawigacja tydzien, settings, gyms)",
+    "🎯 Kalendarz dzialajacy - widok tygodnia, rezerwacje, grafik"
   ],
   "mandatory": false,
   "minVersion": "0.1.0"
