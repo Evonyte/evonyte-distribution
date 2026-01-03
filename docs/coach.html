@@ -343,7 +343,7 @@
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.5/evonyte-coach-v1.0.5-windows.zip" class="btn btn-download">
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.5/evonyte-coach-v1.0.5-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
                 ⬇️ Pobierz Evonyte Coach v1.0.5 (Windows)
             </a>
 
@@ -379,20 +379,35 @@
         const errorMessage = document.getElementById('errorMessage');
 
         // Login form
+        const loginBtn = document.querySelector('#loginForm button[type="submit"]');
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             errorMessage.classList.remove('show');
 
+            // Loading state
+            const originalText = loginBtn.innerHTML;
+            loginBtn.innerHTML = '⏳ Logowanie...';
+            loginBtn.disabled = true;
+
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+            try {
+                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-            if (error) {
-                errorMessage.textContent = error.message;
+                if (error) {
+                    errorMessage.textContent = error.message;
+                    errorMessage.classList.add('show');
+                    loginBtn.innerHTML = originalText;
+                    loginBtn.disabled = false;
+                } else {
+                    showDownload();
+                }
+            } catch (err) {
+                errorMessage.textContent = 'Błąd połączenia. Spróbuj ponownie.';
                 errorMessage.classList.add('show');
-            } else {
-                showDownload();
+                loginBtn.innerHTML = originalText;
+                loginBtn.disabled = false;
             }
         });
 
