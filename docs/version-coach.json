@@ -1,13 +1,13 @@
 {
-  "version": "1.0.17",
-  "build": 18,
+  "version": "1.0.18",
+  "build": 19,
   "releaseDate": "2026-01-03",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.17/evonyte-coach-v1.0.17-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.18/evonyte-coach-v1.0.18-windows.zip",
   "changelog": [
-    "🎨 KOLORY DNI - przeszłe dni przyciemnione (szare)",
-    "👁️ LEPSZY KONTRAST - łatwiej odróżnić przeszłość od przyszłości",
-    "📅 DZISIEJSZY DZIEŃ - cyan highlight (bez zmian)",
-    "⚪ PRZYSZŁE DNI - białe (normalne)"
+    "🔧 SIDEBAR SCROLL FIX - zawsze przewija się prawidłowo",
+    "✅ DOLNA SEKCJA WIDOCZNA - nie jest już obcięta",
+    "🖱️ EDYCJA TYPÓW TRENINGÓW - kliknięcie działa bez problemów",
+    "📏 BOTTOM PADDING - ostatnia sekcja w pełni widoczna"
   ],
   "mandatory": false,
   "minVersion": "0.1.0"
