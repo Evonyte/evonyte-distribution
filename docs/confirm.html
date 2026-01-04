@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Potwierdzony - Evonyte Coach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #065f46;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #4b5563;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(21, 101, 192, 0.4);
+        }
+
+        .steps {
+            background: #f3f4f6;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .steps h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .steps ol {
+            margin-left: 20px;
+            color: #4b5563;
+            line-height: 1.8;
+        }
+
+        .steps li {
+            margin-bottom: 10px;
+        }
+
+        .note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #dbeafe;
+            border-left: 4px solid #1565C0;
+            border-radius: 8px;
+            text-align: left;
+            color: #1e40af;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">✅</div>
+        <h1>Dziękujemy za potwierdzenie!</h1>
+
+        <p class="message">
+            Twoje konto <strong>Evonyte Coach</strong> zostało pomyślnie aktywowane.<br>
+            Możesz teraz zalogować się do aplikacji.
+        </p>
+
+        <a href="https://evonyte.com/coach.html" class="btn">🔓 Przejdź do logowania</a>
+
+        <div class="steps">
+            <h3>📋 Następne kroki:</h3>
+            <ol>
+                <li><strong>Pobierz aplikację</strong> - zaloguj się na evonyte.com/coach.html</li>
+                <li><strong>Zainstaluj Evonyte Coach</strong> na swoim komputerze (Windows)</li>
+                <li><strong>Zaloguj się</strong> używając swojego emaila i hasła</li>
+                <li><strong>Dodaj pierwszego klienta</strong> - wygeneruj kod parowania</li>
+                <li><strong>Zarządzaj treningami</strong> - twórz plany, śledź postępy!</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <strong>💡 Wskazówka:</strong> Po zalogowaniu w aplikacji, użyj funkcji "Dodaj klienta" aby wygenerować 6-cyfrowy kod parowania. Twoi klienci będą mogli połączyć się z Tobą używając tego kodu w aplikacji mobilnej Evonyte Client.
+        </div>
+
+        <p style="margin-top: 40px; color: #9ca3af; font-size: 0.9em;">
+            Masz pytania? Napisz do nas: <a href="mailto:support@evonyte.com" style="color: #1565C0;">support@evonyte.com</a>
+        </p>
+    </div>
+</body>
+</html>
