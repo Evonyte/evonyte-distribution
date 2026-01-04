@@ -1,13 +1,13 @@
 {
-  "version": "1.0.21",
-  "build": 22,
+  "version": "1.0.22",
+  "build": 23,
   "releaseDate": "2026-01-04",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.21/evonyte-coach-v1.0.21-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.22/evonyte-coach-v1.0.22-windows.zip",
   "changelog": [
-    "🐛 FIX: Automatic coach profile creation on login",
-    "✅ Fixes 'Unauthorized' error when generating pairing codes",
-    "🔄 Auto-creates coaches table entry for existing users",
-    "🎯 Ensures all logged-in users can generate pairing codes"
+    "🐛 FIX: Naprawiono generowanie kodu parowania",
+    "✅ Automatyczne tworzenie profilu coach przed generowaniem kodu",
+    "🔄 Zawsze sprawdzanie czy user ma rekord w tabeli coaches",
+    "🎯 Rozwiązuje problem 'Unauthorized: Not a coach'"
   ],
   "mandatory": true,
   "minVersion": "1.0.0"
