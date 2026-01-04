@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.20</span>
+                        <span class="version-badge">v1.0.21</span>
                     </div>
                 </div>
 
@@ -344,10 +344,10 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.20</h3>
+                    <h3>📦 Funkcje v1.0.21</h3>
                     <ul>
-                        <li>🔐 LOGIN SCREEN - Supabase authentication na starcie aplikacji</li>
-                        <li>🚪 LOGOUT - wylogowanie w Settings z potwierdzeniem</li>
+                        <li>🐛 FIX - Automatyczne tworzenie profilu coach przy logowaniu</li>
+                        <li>✅ NAPRAWIONO - Błąd "Unauthorized" przy generowaniu kodów</li>
                         <li>🔑 KODY PAROWANIA - 6-cyfrowe kody dla klientów (24h ważność)</li>
                         <li>📋 COPY-TO-CLIPBOARD - kopiowanie kodu jednym kliknięciem</li>
                         <li>🔒 PRIVACY-FIRST - minimalne dane w chmurze, RLS policies</li>
@@ -363,21 +363,19 @@
             </div>
 
             <div class="changelog">
+• 🐛 FIX v1.0.21 - Automatyczne tworzenie profilu coach przy logowaniu
+• ✅ NAPRAWIONO - Błąd "Unauthorized" przy generowaniu kodów parowania
+• 🔄 AUTO-CREATE - Profil coach tworzony automatycznie dla istniejących użytkowników
+
+Co było w v1.0.20:
 • 🔐 LOGIN SCREEN - Supabase authentication na starcie aplikacji
 • 🚪 LOGOUT - wylogowanie w Settings z potwierdzeniem
 • 🔑 KODY PAROWANIA - 6-cyfrowe kody dla klientów (24h ważność)
-• 📋 COPY-TO-CLIPBOARD - kopiowanie kodu jednym kliknięciem
-• 🔒 PRIVACY-FIRST - minimalne dane w chmurze, RLS policies
-
-Co było w v1.0.19:
-• ✅ UX FIX - komunikat "Już masz najnowszą wersję!" przy update check
-• 📊 DEBUG LOGI - widoczne w konsoli
-• 🔔 SNACKBAR - zielony komunikat przez 2 sekundy
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.20/evonyte-coach-v1.0.20-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.20 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.21/evonyte-coach-v1.0.21-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.21 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>
