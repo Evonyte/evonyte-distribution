@@ -281,18 +281,49 @@
         <div id="loginSection">
             <div class="login-form">
                 <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="error-message" style="background: #d1fae5; color: #065f46; display: none;"></div>
 
+                <!-- Login Form -->
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="twoj@email.com" required>
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="twoj@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Hasło</label>
-                        <input type="password" id="password" placeholder="Wprowadź hasło..." required>
+                        <label for="loginPassword">Hasło</label>
+                        <input type="password" id="loginPassword" placeholder="Wprowadź hasło..." required>
                     </div>
                     <button type="submit" class="btn btn-primary">🔓 Zaloguj się</button>
                 </form>
+
+                <p style="text-align: center; margin-top: 20px; color: #64748b;">
+                    Nie masz konta? <a href="#" id="showRegister" style="color: #1565C0; font-weight: 600; text-decoration: none;">Zarejestruj się</a>
+                </p>
+
+                <!-- Register Form (hidden by default) -->
+                <form id="registerForm" style="display: none;">
+                    <div class="form-group">
+                        <label for="registerName">Imię i nazwisko</label>
+                        <input type="text" id="registerName" placeholder="Jan Kowalski" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="twoj@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Hasło</label>
+                        <input type="password" id="registerPassword" placeholder="Min. 6 znaków..." required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPasswordConfirm">Potwierdź hasło</label>
+                        <input type="password" id="registerPasswordConfirm" placeholder="Powtórz hasło..." required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">📝 Zarejestruj konto</button>
+                </form>
+
+                <p id="backToLogin" style="text-align: center; margin-top: 20px; color: #64748b; display: none;">
+                    Masz już konto? <a href="#" id="showLogin" style="color: #1565C0; font-weight: 600; text-decoration: none;">Zaloguj się</a>
+                </p>
             </div>
         </div>
 
@@ -379,20 +410,48 @@ Co było w v1.0.19:
         const loginSection = document.getElementById('loginSection');
         const downloadSection = document.getElementById('downloadSection');
         const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const showRegisterLink = document.getElementById('showRegister');
+        const showLoginLink = document.getElementById('showLogin');
+        const backToLogin = document.getElementById('backToLogin');
+
+        // Toggle between login and register
+        showRegisterLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            showRegisterLink.parentElement.style.display = 'none';
+            backToLogin.style.display = 'block';
+            errorMessage.classList.remove('show');
+            successMessage.style.display = 'none';
+        });
+
+        showLoginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            showRegisterLink.parentElement.style.display = 'block';
+            backToLogin.style.display = 'none';
+            errorMessage.classList.remove('show');
+            successMessage.style.display = 'none';
+        });
 
         // Login form
         const loginBtn = document.querySelector('#loginForm button[type="submit"]');
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             errorMessage.classList.remove('show');
+            successMessage.style.display = 'none';
 
             // Loading state
             const originalText = loginBtn.innerHTML;
             loginBtn.innerHTML = '⏳ Logowanie...';
             loginBtn.disabled = true;
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
 
             try {
                 const { data, error } = await supabase.auth.signInWithPassword({ email, password });
@@ -410,6 +469,85 @@ Co było w v1.0.19:
                 errorMessage.classList.add('show');
                 loginBtn.innerHTML = originalText;
                 loginBtn.disabled = false;
+            }
+        });
+
+        // Register form
+        const registerBtn = document.querySelector('#registerForm button[type="submit"]');
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorMessage.classList.remove('show');
+            successMessage.style.display = 'none';
+
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+
+            // Validate passwords match
+            if (password !== passwordConfirm) {
+                errorMessage.textContent = 'Hasła nie są identyczne!';
+                errorMessage.classList.add('show');
+                return;
+            }
+
+            // Loading state
+            const originalText = registerBtn.innerHTML;
+            registerBtn.innerHTML = '⏳ Tworzenie konta...';
+            registerBtn.disabled = true;
+
+            try {
+                // Sign up with Supabase Auth
+                const { data, error } = await supabase.auth.signUp({
+                    email: email,
+                    password: password,
+                    options: {
+                        data: {
+                            name: name,
+                            role: 'coach'
+                        }
+                    }
+                });
+
+                if (error) {
+                    errorMessage.textContent = error.message;
+                    errorMessage.classList.add('show');
+                    registerBtn.innerHTML = originalText;
+                    registerBtn.disabled = false;
+                } else {
+                    // Create coach profile in coaches table
+                    if (data.user) {
+                        const { error: profileError } = await supabase
+                            .from('coaches')
+                            .insert({
+                                auth_id: data.user.id,
+                                email: email,
+                                name: name,
+                                account_type: 'coach'
+                            });
+
+                        if (profileError) {
+                            console.error('Profile creation error:', profileError);
+                        }
+                    }
+
+                    // Show success message
+                    successMessage.textContent = '✅ Konto utworzone! Sprawdź email (noreply@evonyte.com) aby potwierdzić adres.';
+                    successMessage.style.display = 'block';
+                    registerForm.reset();
+                    registerBtn.innerHTML = originalText;
+                    registerBtn.disabled = false;
+
+                    // Switch back to login after 3 seconds
+                    setTimeout(() => {
+                        showLoginLink.click();
+                    }, 5000);
+                }
+            } catch (err) {
+                errorMessage.textContent = 'Błąd połączenia. Spróbuj ponownie.';
+                errorMessage.classList.add('show');
+                registerBtn.innerHTML = originalText;
+                registerBtn.disabled = false;
             }
         });
 
