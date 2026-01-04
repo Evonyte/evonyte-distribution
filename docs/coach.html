@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.21</span>
+                        <span class="version-badge">v1.0.23</span>
                     </div>
                 </div>
 
@@ -344,14 +344,14 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.21</h3>
+                    <h3>📦 Funkcje v1.0.23</h3>
                     <ul>
-                        <li>🐛 FIX - Automatyczne tworzenie profilu coach przy logowaniu</li>
-                        <li>✅ NAPRAWIONO - Błąd "Unauthorized" przy generowaniu kodów</li>
+                        <li>🔄 SYNC KLIENTÓW - przycisk synchronizacji sparowanych klientów z Supabase</li>
+                        <li>📊 DATABASE - dodano supabaseId do tabel (Gyms, WorkSchedules, SlotTypes, BlockedSlots)</li>
+                        <li>🔧 FIX - naprawiono syncClients() i pullClients()</li>
+                        <li>📋 ANKIETY - pełne wsparcie dla rozszerzonych ankiet klientów</li>
                         <li>🔑 KODY PAROWANIA - 6-cyfrowe kody dla klientów (24h ważność)</li>
-                        <li>📋 COPY-TO-CLIPBOARD - kopiowanie kodu jednym kliknięciem</li>
                         <li>🔒 PRIVACY-FIRST - minimalne dane w chmurze, RLS policies</li>
-                        <li>🛡️ AUTH GATE - automatyczny routing (login ↔ dashboard)</li>
                     </ul>
                 </div>
 
@@ -363,19 +363,22 @@
             </div>
 
             <div class="changelog">
-• 🐛 FIX v1.0.21 - Automatyczne tworzenie profilu coach przy logowaniu
-• ✅ NAPRAWIONO - Błąd "Unauthorized" przy generowaniu kodów parowania
-• 🔄 AUTO-CREATE - Profil coach tworzony automatycznie dla istniejących użytkowników
+• ✅ FAZA 1-5 Complete - Questionnaire improvements + pairing fixes
+• 🔄 Coach App pullClients() - sync sparowanych klientów z Supabase
+• 📊 Gender-conditional measurements (Male: belly+pelvis, Female: waist+hips)
+• ⚖️ Units toggle (Metric ↔ Imperial) z auto-konwersją
+• 📧 Email confirmation Edge Function + SQL trigger gotowy
+• 🏋️ Custom equipment text field + usunięto "preferred style"
+• 🗄️ Database fixes: supabaseId columns, getClientBySupabaseId(), getBookingBySupabaseId()
 
-Co było w v1.0.20:
+Co było w v1.0.21-22:
+• 🐛 FIX - Automatyczne tworzenie profilu coach przy logowaniu
 • 🔐 LOGIN SCREEN - Supabase authentication na starcie aplikacji
-• 🚪 LOGOUT - wylogowanie w Settings z potwierdzeniem
-• 🔑 KODY PAROWANIA - 6-cyfrowe kody dla klientów (24h ważność)
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.21/evonyte-coach-v1.0.21-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.21 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.23/evonyte-coach-v1.0.23-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.23 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>

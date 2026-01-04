@@ -1,13 +1,23 @@
 {
-  "version": "1.0.22",
-  "build": 23,
+  "version": "1.0.23",
+  "build": 24,
   "releaseDate": "2026-01-04",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.22/evonyte-coach-v1.0.22-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.23/evonyte-coach-v1.0.23-windows.zip",
   "changelog": [
-    "🐛 FIX: Naprawiono generowanie kodu parowania",
-    "✅ Automatyczne tworzenie profilu coach przed generowaniem kodu",
-    "🔄 Zawsze sprawdzanie czy user ma rekord w tabeli coaches",
-    "🎯 Rozwiązuje problem 'Unauthorized: Not a coach'"
+    "✅ FAZA 1-5 Complete - Questionnaire improvements + pairing fixes",
+    "🔄 Coach App pullClients() - sync sparowanych klientów z Supabase",
+    "📧 Email confirmation Edge Function + SQL trigger",
+    "🔐 privacy@evonyte.com mailbox utworzony",
+    "📊 Gender-conditional measurements (Male: belly+pelvis, Female: waist+hips)",
+    "⚖️ Units toggle (Metric ↔ Imperial) z auto-konwersją",
+    "⏰ Work hours time picker UI",
+    "🍴 Eating location multi-select (max 2 opcje)",
+    "🍔 Fast food frequency - dodano 'Raz na 2 tyg'",
+    "🥤 Other drinks 3-field validation (ilość + jednostka + częstotliwość)",
+    "🏃 Training frequency - dodano opcję '0' (nie trenuję, chcę zacząć)",
+    "📱 Android immersive mode (auto-hide system bars)",
+    "🏋️ Custom equipment text field",
+    "🗄️ Database fixes: supabaseId columns, getClientBySupabaseId(), getBookingBySupabaseId()"
   ],
   "mandatory": true,
   "minVersion": "1.0.0"
