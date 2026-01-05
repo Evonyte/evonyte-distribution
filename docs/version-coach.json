@@ -1,14 +1,15 @@
 {
-  "version": "1.0.19",
-  "build": 20,
-  "releaseDate": "2026-01-03",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.19/evonyte-coach-v1.0.19-windows.zip",
+  "version": "1.0.29",
+  "build": 30,
+  "releaseDate": "2026-01-05",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.29/evonyte-coach-v1.0.29-windows.zip",
   "changelog": [
-    "✅ UX FIX - komunikat 'Już masz najnowszą wersję!' przy kliknięciu update",
-    "📊 DEBUG LOGI - widoczne w konsoli (Already up to date / Update available)",
-    "🔔 SNACKBAR - zielony komunikat przez 2 sekundy",
-    "🔧 SIDEBAR SCROLL - zawsze przewija się prawidłowo (v1.0.18)"
+    "🚀 BRAIN PC INTEGRATION - własny serwer API",
+    "🔄 Sync klientów i ankiet z Brain PC PostgreSQL",
+    "🔑 Pairing system przez Brain PC",
+    "🔧 FIX: pullClients() i pullClientQuestionnaires()",
+    "✅ Wszystkie endpointy przetestowane"
   ],
-  "mandatory": false,
-  "minVersion": "0.1.0"
+  "mandatory": true,
+  "minVersion": "1.0.0"
 }
