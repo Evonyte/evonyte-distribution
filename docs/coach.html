@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.31</span>
+                        <span class="version-badge">v1.0.32</span>
                     </div>
                 </div>
 
@@ -344,7 +344,7 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.31</h3>
+                    <h3>📦 Funkcje v1.0.32</h3>
                     <ul>
                         <li>✅ AUTO-UPDATE Z BRAIN PC - zero dependency na GitHub/Cloudflare</li>
                         <li>🚀 BRAIN PC API - integracja z własnym serwerem (http://192.168.1.100:8080)</li>
@@ -363,22 +363,23 @@
             </div>
 
             <div class="changelog">
-• 🔧 NAPRAWIONO LOGOWANIE - poprawne wyświetlanie błędów Firebase Auth
-• ✅ Szczegółowe komunikaty błędów (invalid-credential, wrong-password, user-not-found)
-• 🔐 Poprawione error handling w login_screen.dart i firebase_auth_service.dart
-• ✅ AUTO-UPDATE z BRAIN PC - czyta version.json z własnego serwera
-• 📦 DOWNLOAD z BRAIN PC - pobiera ZIP z http://192.168.1.100:8081
-• 🚀 BRAIN PC INTEGRATION - pełna integracja z własnym API serwerem
+• 🔍 DOKŁADNE KODY BŁĘDÓW - każdy błąd Firebase Auth pokazywany z kodem
+• ✅ operation-not-allowed → "Logowanie email/hasło nie jest włączone"
+• ✅ invalid-credential → "Nieprawidłowe dane logowania"
+• ✅ network-request-failed → "Brak połączenia z internetem"
+• ✅ wrong-password, user-not-found, too-many-requests - wszystkie obsłużone
+• 🔧 Uproszczono kod - FirebaseAuthException throw zamiast return null
+• ✅ AUTO-UPDATE z BRAIN PC
+• 🚀 BRAIN PC INTEGRATION
 
-Co było w v1.0.30:
-• Auto-update z Brain PC (version.json + ZIP download)
-• Brain PC sync (clients, questionnaires)
-• Pairing system przez Brain PC PostgreSQL
+Co było w v1.0.31:
+• Naprawiono wyświetlanie błędów logowania (generyczny komunikat)
+• Dodano sprawdzanie null z signIn()
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.31/evonyte-coach-v1.0.31-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.31 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.32/evonyte-coach-v1.0.32-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.32 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>
