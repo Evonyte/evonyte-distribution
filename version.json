@@ -1,10 +1,12 @@
 {
-  "version": "1.0.53",
-  "build": 53,
-  "releaseDate": "2026-01-01",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/v1.0.53/evonyte-admin-v1.0.53-windows.zip",
+  "version": "1.0.55",
+  "build": 55,
+  "releaseDate": "2026-01-05",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/admin-v1.0.55/evonyte-admin-v1.0.55-windows.zip",
   "changelog": [
-    "Fix: Authorization header for update check API"
+    "Fixed update service to use Brain PC instead of GitHub",
+    "Improved auto-update reliability",
+    "Brain PC connection improvements"
   ],
   "mandatory": false,
   "minVersion": "1.0.0"
