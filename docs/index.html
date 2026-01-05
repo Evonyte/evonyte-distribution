@@ -958,24 +958,30 @@
 
         async function loadVersionInfo() {
             try {
-                const response = await fetch(`${SUPABASE_URL}/functions/v1/latest`, {
-                    headers: {
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-                    }
-                });
+                // Fetch latest release from GitHub
+                const response = await fetch('https://api.github.com/repos/Evonyte/evonyte-distribution/releases/tags/admin-v1.0.55');
 
                 if (!response.ok) {
                     throw new Error('Failed to load version info');
                 }
 
-                latestVersionData = await response.json();
+                const release = await response.json();
+
+                // Map GitHub release data to our format
+                latestVersionData = {
+                    version: '1.0.55',
+                    file_size: release.assets && release.assets[0] ? release.assets[0].size : 51345869,
+                    released_at: release.published_at,
+                    changelog: release.body || 'Brak informacji o zmianach.',
+                    download_url: release.assets && release.assets[0] ? release.assets[0].browser_download_url : 'https://github.com/Evonyte/evonyte-distribution/releases/download/admin-v1.0.55/evonyte-admin-v1.0.55-windows.zip'
+                };
 
                 // Update UI
                 document.getElementById('versionBadge').textContent = `v${latestVersionData.version}`;
                 document.getElementById('fileSize').textContent = formatBytes(latestVersionData.file_size);
                 document.getElementById('releaseDate').textContent = new Date(latestVersionData.released_at).toLocaleDateString('pl-PL');
                 document.getElementById('changelogTitle').textContent = `📝 Co nowego w v${latestVersionData.version}`;
-                document.getElementById('changelogContent').textContent = latestVersionData.changelog || 'Brak informacji o zmianach.';
+                document.getElementById('changelogContent').textContent = latestVersionData.changelog;
                 document.getElementById('downloadLink').href = latestVersionData.download_url;
                 document.getElementById('downloadLink').textContent = `⬇️ Pobierz Evonyte Admin App v${latestVersionData.version}`;
 
