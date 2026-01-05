@@ -1,12 +1,12 @@
 {
-  "version": "1.0.26",
-  "build": 27,
+  "version": "1.0.27",
+  "build": 28,
   "releaseDate": "2026-01-05",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.26/evonyte-coach-v1.0.26-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.27/evonyte-coach-v1.0.27-windows.zip",
   "changelog": [
-    "🐛 FIX: Supabase sync error (created_at → paired_at)",
-    "✅ Sync działa poprawnie z istniejącym schema",
-    "🔄 Pobieranie klientów z Supabase naprawione"
+    "🐛 FIX: Empty client name validation error",
+    "✅ Fallback do 'Klient' jeśli name pusty",
+    "🔄 Sync z Supabase działa poprawnie"
   ],
   "mandatory": true,
   "minVersion": "1.0.0"
