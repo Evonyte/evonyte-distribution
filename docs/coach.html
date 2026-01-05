@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.29</span>
+                        <span class="version-badge">v1.0.30</span>
                     </div>
                 </div>
 
@@ -344,41 +344,41 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.29</h3>
+                    <h3>📦 Funkcje v1.0.30</h3>
                     <ul>
+                        <li>✅ AUTO-UPDATE Z BRAIN PC - zero dependency na GitHub/Cloudflare</li>
                         <li>🚀 BRAIN PC API - integracja z własnym serwerem (http://192.168.1.100:8080)</li>
                         <li>🔄 SYNC Z BRAIN PC - klienci i ankiety synchronizowane z PostgreSQL</li>
                         <li>🔑 PAIRING BRAIN PC - generowanie kodów parowania przez Brain PC</li>
-                        <li>📊 QUESTIONNAIRES BRAIN PC - pełna synchronizacja ankiet klientów</li>
-                        <li>🔧 DATABASE - poprawiono pullClients() i pullClientQuestionnaires()</li>
-                        <li>🔒 PRIVACY-FIRST - własny serwer, zero limitów Supabase</li>
+                        <li>📦 DOWNLOAD ZIP - pobieranie aktualizacji z Brain PC (port 8081)</li>
+                        <li>🔒 PRIVACY-FIRST - własny serwer, pełna kontrola nad danymi</li>
                     </ul>
                 </div>
 
                 <div class="download-info">
                     <span><strong>Platforma:</strong> Windows x64</span>
-                    <span><strong>Rozmiar:</strong> ~14 MB</span>
+                    <span><strong>Rozmiar:</strong> ~15 MB</span>
                     <span><strong>Data:</strong> 05.01.2026</span>
                 </div>
             </div>
 
             <div class="changelog">
+• ✅ AUTO-UPDATE z BRAIN PC - czyta version.json z własnego serwera
+• 📦 DOWNLOAD z BRAIN PC - pobiera ZIP z http://192.168.1.100:8081
 • 🚀 BRAIN PC INTEGRATION - pełna integracja z własnym API serwerem
 • 🔄 brain_pc_service.dart (200+ linii) - HTTP client dla Coach App
 • 📊 Pull clients from Brain PC PostgreSQL
 • 📋 Pull questionnaires from Brain PC
 • 🔧 FIX - naprawiono sync_service.dart (getClientByEmail, createdAt → joinedAt)
-• ✅ All endpoints tested - pairing, clients sync, questionnaires sync
 
-Co było w v1.0.25:
-• 🔄 Sync klientów z Supabase + database fixes
-• 📊 Gender-conditional measurements + units toggle
-• 📧 Email confirmation Edge Function
+Co było w v1.0.29:
+• Brain PC API endpoints + database migration
+• Pairing, clients sync, questionnaires sync
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.29/evonyte-coach-v1.0.29-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.29 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.30/evonyte-coach-v1.0.30-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.30 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>
