@@ -1,15 +1,13 @@
 {
-  "version": "1.0.24",
-  "build": 25,
-  "releaseDate": "2026-01-04",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.24/evonyte-coach-v1.0.24-windows.zip",
+  "version": "1.0.25",
+  "build": 26,
+  "releaseDate": "2026-01-05",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.25/evonyte-coach-v1.0.25-windows.zip",
   "changelog": [
-    "✅ Questionnaire sync improvements - Coach side",
-    "📊 Gender-specific measurements display (Male: belly+pelvis, Female: waist)",
-    "🔄 pullClientQuestionnaires() - sync questionnaires from Supabase",
-    "🗄️ upsertQuestionnaire() database method",
-    "🎨 QuestionnaireView UI updates",
-    "🔧 Database fixes: UUID import, type corrections"
+    "🗑️ DELETE: Coach can delete clients from system",
+    "✅ Immediate removal from Supabase + local database",
+    "🔄 CASCADE: Related data (questionnaires, bookings) deleted automatically",
+    "🔒 Security: Coach can only delete their own clients"
   ],
   "mandatory": true,
   "minVersion": "1.0.0"
