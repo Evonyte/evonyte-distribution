@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.30</span>
+                        <span class="version-badge">v1.0.31</span>
                     </div>
                 </div>
 
@@ -344,7 +344,7 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.30</h3>
+                    <h3>📦 Funkcje v1.0.31</h3>
                     <ul>
                         <li>✅ AUTO-UPDATE Z BRAIN PC - zero dependency na GitHub/Cloudflare</li>
                         <li>🚀 BRAIN PC API - integracja z własnym serwerem (http://192.168.1.100:8080)</li>
@@ -357,28 +357,28 @@
 
                 <div class="download-info">
                     <span><strong>Platforma:</strong> Windows x64</span>
-                    <span><strong>Rozmiar:</strong> ~15 MB</span>
+                    <span><strong>Rozmiar:</strong> ~14.4 MB</span>
                     <span><strong>Data:</strong> 05.01.2026</span>
                 </div>
             </div>
 
             <div class="changelog">
+• 🔧 NAPRAWIONO LOGOWANIE - poprawne wyświetlanie błędów Firebase Auth
+• ✅ Szczegółowe komunikaty błędów (invalid-credential, wrong-password, user-not-found)
+• 🔐 Poprawione error handling w login_screen.dart i firebase_auth_service.dart
 • ✅ AUTO-UPDATE z BRAIN PC - czyta version.json z własnego serwera
 • 📦 DOWNLOAD z BRAIN PC - pobiera ZIP z http://192.168.1.100:8081
 • 🚀 BRAIN PC INTEGRATION - pełna integracja z własnym API serwerem
-• 🔄 brain_pc_service.dart (200+ linii) - HTTP client dla Coach App
-• 📊 Pull clients from Brain PC PostgreSQL
-• 📋 Pull questionnaires from Brain PC
-• 🔧 FIX - naprawiono sync_service.dart (getClientByEmail, createdAt → joinedAt)
 
-Co było w v1.0.29:
-• Brain PC API endpoints + database migration
-• Pairing, clients sync, questionnaires sync
+Co było w v1.0.30:
+• Auto-update z Brain PC (version.json + ZIP download)
+• Brain PC sync (clients, questionnaires)
+• Pairing system przez Brain PC PostgreSQL
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.30/evonyte-coach-v1.0.30-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.30 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.31/evonyte-coach-v1.0.31-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.31 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>
