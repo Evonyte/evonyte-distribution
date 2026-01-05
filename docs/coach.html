@@ -334,7 +334,7 @@
                     <div class="app-icon">👨‍🏫</div>
                     <div class="app-title">
                         <h2>Evonyte Coach</h2>
-                        <span class="version-badge">v1.0.25</span>
+                        <span class="version-badge">v1.0.29</span>
                     </div>
                 </div>
 
@@ -344,41 +344,41 @@
                 </p>
 
                 <div class="features">
-                    <h3>📦 Funkcje v1.0.25</h3>
+                    <h3>📦 Funkcje v1.0.29</h3>
                     <ul>
-                        <li>🔄 SYNC KLIENTÓW - przycisk synchronizacji sparowanych klientów z Supabase</li>
-                        <li>📊 DATABASE - dodano supabaseId do tabel (Gyms, WorkSchedules, SlotTypes, BlockedSlots)</li>
-                        <li>🔧 FIX - naprawiono syncClients() i pullClients()</li>
-                        <li>📋 ANKIETY - pełne wsparcie dla rozszerzonych ankiet klientów</li>
-                        <li>🔑 KODY PAROWANIA - 6-cyfrowe kody dla klientów (24h ważność)</li>
-                        <li>🔒 PRIVACY-FIRST - minimalne dane w chmurze, RLS policies</li>
+                        <li>🚀 BRAIN PC API - integracja z własnym serwerem (http://192.168.1.100:8080)</li>
+                        <li>🔄 SYNC Z BRAIN PC - klienci i ankiety synchronizowane z PostgreSQL</li>
+                        <li>🔑 PAIRING BRAIN PC - generowanie kodów parowania przez Brain PC</li>
+                        <li>📊 QUESTIONNAIRES BRAIN PC - pełna synchronizacja ankiet klientów</li>
+                        <li>🔧 DATABASE - poprawiono pullClients() i pullClientQuestionnaires()</li>
+                        <li>🔒 PRIVACY-FIRST - własny serwer, zero limitów Supabase</li>
                     </ul>
                 </div>
 
                 <div class="download-info">
                     <span><strong>Platforma:</strong> Windows x64</span>
-                    <span><strong>Rozmiar:</strong> ~13 MB</span>
-                    <span><strong>Data:</strong> 04.01.2026</span>
+                    <span><strong>Rozmiar:</strong> ~14 MB</span>
+                    <span><strong>Data:</strong> 05.01.2026</span>
                 </div>
             </div>
 
             <div class="changelog">
-• ✅ FAZA 1-5 Complete - Questionnaire improvements + pairing fixes
-• 🔄 Coach App pullClients() - sync sparowanych klientów z Supabase
-• 📊 Gender-conditional measurements (Male: belly+pelvis, Female: waist+hips)
-• ⚖️ Units toggle (Metric ↔ Imperial) z auto-konwersją
-• 📧 Email confirmation Edge Function + SQL trigger gotowy
-• 🏋️ Custom equipment text field + usunięto "preferred style"
-• 🗄️ Database fixes: supabaseId columns, getClientBySupabaseId(), getBookingBySupabaseId()
+• 🚀 BRAIN PC INTEGRATION - pełna integracja z własnym API serwerem
+• 🔄 brain_pc_service.dart (200+ linii) - HTTP client dla Coach App
+• 📊 Pull clients from Brain PC PostgreSQL
+• 📋 Pull questionnaires from Brain PC
+• 🔧 FIX - naprawiono sync_service.dart (getClientByEmail, createdAt → joinedAt)
+• ✅ All endpoints tested - pairing, clients sync, questionnaires sync
 
-Co było w v1.0.21-22:
-• 🐛 FIX - Automatyczne tworzenie profilu coach przy logowaniu
-• 🔐 LOGIN SCREEN - Supabase authentication na starcie aplikacji
+Co było w v1.0.25:
+• 🔄 Sync klientów z Supabase + database fixes
+• 📊 Gender-conditional measurements + units toggle
+• 📧 Email confirmation Edge Function
                 </div>
             </div>
 
-            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.25/evonyte-coach-v1.0.25-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
-                ⬇️ Pobierz Evonyte Coach v1.0.25 (Windows)
+            <a href="https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.29/evonyte-coach-v1.0.29-windows.zip" class="btn btn-download" download style="display: block; text-align: center; text-decoration: none;">
+                ⬇️ Pobierz Evonyte Coach v1.0.29 (Windows)
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>

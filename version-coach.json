@@ -1,12 +1,14 @@
 {
-  "version": "1.0.28",
-  "build": 29,
+  "version": "1.0.29",
+  "build": 30,
   "releaseDate": "2026-01-05",
-  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.28/evonyte-coach-v1.0.28-windows.zip",
+  "downloadUrl": "https://github.com/Evonyte/evonyte-distribution/releases/download/coach-v1.0.29/evonyte-coach-v1.0.29-windows.zip",
   "changelog": [
-    "🐛 FIX: Questionnaire sync query - używa supabaseId",
-    "✅ Ankiety klientów wyświetlają się poprawnie",
-    "🔄 Sync z Supabase działa poprawnie"
+    "🚀 BRAIN PC INTEGRATION - własny serwer API",
+    "🔄 Sync klientów i ankiet z Brain PC PostgreSQL",
+    "🔑 Pairing system przez Brain PC",
+    "🔧 FIX: pullClients() i pullClientQuestionnaires()",
+    "✅ Wszystkie endpointy przetestowane"
   ],
   "mandatory": true,
   "minVersion": "1.0.0"
