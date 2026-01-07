@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evonyte - Admin Panel</title>
+    <title>Evonyte Admin - Download</title>
     <style>
         * {
             margin: 0;
@@ -12,400 +12,262 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 700px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 30px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
-        .header {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
+        .logo {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 5px;
         }
 
         h1 {
-            color: #1e293b;
+            text-align: center;
+            font-size: 2em;
+            color: #333;
             margin-bottom: 5px;
         }
 
         .subtitle {
-            color: #64748b;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 8px;
-        }
-
-        input[type="text"],
-        input[type="password"],
-        input[type="file"],
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
+            text-align: center;
             font-size: 1em;
-            font-family: inherit;
+            color: #666;
+            margin-bottom: 20px;
         }
 
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .checkbox-group {
+        /* App Switcher - Fixed Position Top Right */
+        .app-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
             display: flex;
-            align-items: center;
             gap: 10px;
         }
 
-        .checkbox-group input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+        .app-switcher a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+
+        .app-switcher a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-switcher a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .app-info {
+            margin-bottom: 30px;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .app-icon {
+            font-size: 3em;
+        }
+
+        .app-title h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .app-description {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .features h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+            font-size: 1.05em;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .download-info {
+            display: flex;
+            justify-content: space-around;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .download-info span {
+            color: #475569;
+            font-size: 0.95em;
+        }
+
+        .changelog {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            white-space: pre-line;
+            color: #92400e;
+            font-size: 0.95em;
+            line-height: 1.7;
         }
 
         .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 14px 30px;
-            font-size: 1em;
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.2em;
             font-weight: bold;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .btn-secondary {
-            background: #64748b;
-        }
-
-        .alert {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .alert-success {
-            background: #d1fae5;
-            border-left: 4px solid #10b981;
-            color: #065f46;
-        }
-
-        .alert-error {
-            background: #fee2e2;
-            border-left: 4px solid #ef4444;
-            color: #991b1b;
-        }
-
-        .alert-info {
-            background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            color: #1e40af;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .progress {
-            width: 100%;
-            height: 8px;
-            background: #e2e8f0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s;
-        }
-
-        .file-info {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-
-        .file-info strong {
-            color: #475569;
-        }
-
-        .back-link {
-            display: inline-block;
-            color: #667eea;
+            transition: all 0.3s;
             text-decoration: none;
-            margin-bottom: 20px;
+            display: block;
+            text-align: center;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
+        .btn-download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
     </style>
 </head>
 <body>
-    <!-- IP WHITELIST PROTECTION -->
-    <div id="access-denied" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#1e293b; color:white; display:flex; justify-content:center; align-items:center; flex-direction:column; z-index:9999;">
-        <h1 style="font-size:3em; margin-bottom:20px;">🔒 ACCESS DENIED</h1>
-        <p style="font-size:1.2em; color:#94a3b8;">This panel is restricted to authorized devices only.</p>
-        <p style="font-size:0.9em; color:#64748b; margin-top:20px;" id="denied-ip"></p>
+    <!-- App Switcher - Fixed Top Right -->
+    <div class="app-switcher">
+        <a href="admin.html" class="active">💻 Admin</a>
+        <a href="coach.html">🏋️ Coach</a>
+        <a href="client.html">📱 Client</a>
     </div>
 
-    <div id="main-content" style="display:none;">
     <div class="container">
-        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="logo">💻</div>
+        <h1>Evonyte Admin</h1>
+        <p class="subtitle">Panel administracyjny Brain PC + Mini-Vision</p>
 
-        <div class="header">
-            <h1>🔧 Admin Panel</h1>
-            <p class="subtitle">Upload new version of Evonyte Admin App</p>
-        </div>
-
-        <!-- Auth -->
-        <div id="auth-section" class="card">
-            <h2>🔐 Authentication</h2>
-            <div class="form-group">
-                <label>API Key (admin permission required)</label>
-                <input type="password" id="admin-api-key" placeholder="Enter your API key">
+        <div class="app-info">
+            <div class="app-header">
+                <div class="app-icon">💻</div>
+                <div class="app-title">
+                    <h2>Evonyte Admin</h2>
+                    <span class="version-badge">v1.0.63</span>
+                </div>
             </div>
-            <button class="btn" onclick="authenticate()">Authenticate</button>
+
+            <p class="app-description">
+                Aplikacja do zarządzania Brain PC - monitoring GPU, trening modeli ML (Mini-Vision),
+                analiza wydajności i zarządzanie systemem.
+            </p>
+
+            <div class="features">
+                <h3>📦 Funkcje v1.0.63</h3>
+                <ul>
+                    <li>🧠 MINI-VISION - 3-stage ML pipeline (MobileNetV3/ConvNeXt/EfficientNetV2)</li>
+                    <li>📊 16 DATASETÓW - Body Analysis (9), Training Planning (2), Diet Planning (5)</li>
+                    <li>🎮 TRAINING CONTROLS - Start/Pause/Stop/Save/Skip z real-time status</li>
+                    <li>📈 QUEUE MANAGEMENT - Drag & drop, reorder, priorytetyzacja zadań</li>
+                    <li>🎯 DUAL DROPDOWN UI - Dataset × Intensity (Small 2.5M / Medium 89M / Large 120M)</li>
+                    <li>💾 GPU METRICS - Real nvidia-smi (utilization, memory, temperature)</li>
+                    <li>📉 TRAINING HISTORY - Purpose, Baseline, Target, Improvement tracking</li>
+                    <li>🔄 AUTO-UPDATE - Aktualizacje z Brain PC (http://192.168.1.100:8081)</li>
+                    <li>🖥️ WIN98 RETRO THEME - Nostalgiczny design z nowoczesną funkcjonalnością</li>
+                    <li>🔐 BRAIN PC INTEGRATION - Pełna kontrola nad Brain PC (192.168.1.100)</li>
+                </ul>
+            </div>
+
+            <div class="download-info">
+                <span><strong>Platforma:</strong> Windows x64</span>
+                <span><strong>Rozmiar:</strong> ~14 MB</span>
+                <span><strong>Data:</strong> 07.01.2026</span>
+            </div>
         </div>
 
-        <!-- Upload Form -->
-        <div id="upload-section" class="card hidden">
-            <h2>📤 Upload New Version</h2>
-
-            <div id="alert" class="hidden"></div>
-
-            <form id="upload-form" onsubmit="uploadVersion(event)">
-                <div class="form-group">
-                    <label>Version Number *</label>
-                    <input type="text" id="version" placeholder="e.g., 1.0.0" required>
-                    <small style="color: #64748b;">Format: major.minor.patch (e.g., 1.0.0)</small>
-                </div>
-
-                <div class="form-group">
-                    <label>Executable File (.exe) *</label>
-                    <input type="file" id="file" accept=".exe,.msi" required onchange="showFileInfo()">
-                    <div id="file-info" class="file-info hidden"></div>
-                </div>
-
-                <div class="form-group">
-                    <label>Changelog</label>
-                    <textarea id="changelog" placeholder="Describe what's new in this version..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="set-latest">
-                        <label for="set-latest" style="margin: 0;">Set as latest version</label>
-                    </div>
-                </div>
-
-                <div id="progress-section" class="hidden">
-                    <p>Uploading...</p>
-                    <div class="progress">
-                        <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn" id="upload-btn">Upload Version</button>
-            </form>
+        <div class="changelog">
+• ✅ FIX: Dodano WSZYSTKIE pobrane datasety - teraz 16 opcji treningów!
+• 📊 Body Analysis (9): COCO, MPII Pose, DeepFashion2, Open Images V6, Places365, COCO Stuff, PASCAL VOC, ADE20K, LFW Faces
+• 🏋️ Training Planning (2): Kinetics-400, PMC Research Papers
+• 🍴 Diet Planning (5): Food-101, Nutrition5k, Recipe1M+, USDA Database, VireoFood-172
+• 🎯 Poprzednio: 10 datasetów → Teraz: 16 datasetów × 3 poziomy = 48 kombinacji!
+• 📏 Poprawiono rozmiary kategorii: Body 129GB, Training 95GB, Diet 21GB
+• 🔧 Optymalizacja ML training pipeline z GPU utilization fixes
         </div>
+
+        <a href="http://192.168.1.100:8081/evonyte-admin-v1.0.63-windows.zip" class="btn btn-download">
+            ⬇️ Pobierz Evonyte Admin v1.0.63 (Windows)
+        </a>
     </div>
-    </div> <!-- close main-content -->
-
-    <script>
-        const SUPABASE_URL = 'https://brobuwegghwjhxlptffk.supabase.co';
-        let apiKey = localStorage.getItem('evonyte_admin_key');
-
-        if (apiKey) {
-            document.getElementById('admin-api-key').value = apiKey;
-            showUploadForm();
-        }
-
-        function authenticate() {
-            const key = document.getElementById('admin-api-key').value.trim();
-            if (key) {
-                apiKey = key;
-                localStorage.setItem('evonyte_admin_key', key);
-                showUploadForm();
-            } else {
-                alert('Please enter API key');
-            }
-        }
-
-        function showUploadForm() {
-            document.getElementById('auth-section').classList.add('hidden');
-            document.getElementById('upload-section').classList.remove('hidden');
-        }
-
-        function showFileInfo() {
-            const fileInput = document.getElementById('file');
-            const file = fileInput.files[0];
-
-            if (file) {
-                const info = `
-                    <strong>File:</strong> ${file.name}<br>
-                    <strong>Size:</strong> ${formatBytes(file.size)}<br>
-                    <strong>Type:</strong> ${file.type || 'application/x-msdownload'}
-                `;
-                document.getElementById('file-info').innerHTML = info;
-                document.getElementById('file-info').classList.remove('hidden');
-            }
-        }
-
-        async function uploadVersion(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('upload-form');
-            const submitBtn = document.getElementById('upload-btn');
-            const progressSection = document.getElementById('progress-section');
-            const progressBar = document.getElementById('progress-bar');
-
-            // Get form data
-            const version = document.getElementById('version').value.trim();
-            const file = document.getElementById('file').files[0];
-            const changelog = document.getElementById('changelog').value.trim();
-            const setLatest = document.getElementById('set-latest').checked;
-
-            if (!file) {
-                showAlert('Please select a file', 'error');
-                return;
-            }
-
-            // Disable form
-            submitBtn.disabled = true;
-            progressSection.classList.remove('hidden');
-
-            try {
-                // Prepare FormData
-                const formData = new FormData();
-                formData.append('file', file);
-                formData.append('version', version);
-                formData.append('changelog', changelog);
-                formData.append('set_latest', setLatest.toString());
-
-                // Upload
-                const response = await fetch(`${SUPABASE_URL}/functions/v1/upload`, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${apiKey}`
-                    },
-                    body: formData
-                });
-
-                progressBar.style.width = '100%';
-
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Upload failed');
-                }
-
-                const data = await response.json();
-
-                showAlert(`✅ Success! Version ${data.version} uploaded successfully.`, 'success');
-
-                // Reset form
-                form.reset();
-                document.getElementById('file-info').classList.add('hidden');
-
-            } catch (error) {
-                showAlert(`❌ Error: ${error.message}`, 'error');
-            } finally {
-                submitBtn.disabled = false;
-                progressSection.classList.add('hidden');
-                progressBar.style.width = '0%';
-            }
-        }
-
-        function showAlert(message, type) {
-            const alert = document.getElementById('alert');
-            alert.textContent = message;
-            alert.className = `alert alert-${type}`;
-            alert.classList.remove('hidden');
-
-            setTimeout(() => {
-                alert.classList.add('hidden');
-            }, 5000);
-        }
-
-        function formatBytes(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-        }
-
-        // === IP WHITELIST CHECK ===
-        const ALLOWED_IPS = ['90.243.72.251'];
-
-        async function checkIPAccess() {
-            try {
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-                const userIP = data.ip;
-
-                if (ALLOWED_IPS.includes(userIP)) {
-                    // Access granted
-                    document.getElementById('main-content').style.display = 'block';
-                    document.getElementById('access-denied').style.display = 'none';
-                } else {
-                    // Access denied
-                    document.getElementById('access-denied').style.display = 'flex';
-                    document.getElementById('denied-ip').textContent = 'Your IP: ' + userIP;
-                    document.getElementById('main-content').style.display = 'none';
-                }
-            } catch (e) {
-                // On error, deny access
-                document.getElementById('access-denied').style.display = 'flex';
-                document.getElementById('main-content').style.display = 'none';
-            }
-        }
-
-        // Check IP on page load
-        checkIPAccess();
-    </script>
 </body>
 </html>

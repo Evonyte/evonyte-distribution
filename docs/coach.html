@@ -26,28 +26,65 @@
             width: 100%;
             background: white;
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 30px 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .logo {
             text-align: center;
-            font-size: 4em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 5px;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 2em;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1em;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* App Switcher - Fixed Position Top Right */
+        .app-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .app-switcher a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+
+        .app-switcher a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-switcher a.active {
+            background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+            color: white;
         }
 
         /* Login Section */
@@ -60,7 +97,7 @@
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         label {
@@ -73,10 +110,10 @@
         input[type="password"],
         input[type="email"] {
             width: 100%;
-            padding: 14px 16px;
+            padding: 10px 12px;
             border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1em;
+            border-radius: 8px;
+            font-size: 0.95em;
             transition: border-color 0.3s;
         }
 
@@ -87,11 +124,11 @@
 
         .btn {
             width: 100%;
-            padding: 14px 24px;
-            font-size: 1.1em;
+            padding: 12px 20px;
+            font-size: 1em;
             font-weight: bold;
             border: none;
-            border-radius: 12px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -249,29 +286,25 @@
             background: #f8fafc;
         }
 
-        .back-link {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .back-link a {
-            color: #1565C0;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
         footer {
-            margin-top: 40px;
-            padding-top: 30px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 2px solid #e2e8f0;
             text-align: center;
             color: #94a3b8;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
 </head>
 <body>
+    <!-- App Switcher - Fixed Top Right -->
+    <div class="app-switcher">
+        <a href="admin.html">💻 Admin</a>
+        <a href="coach.html" class="active">🏋️ Coach</a>
+        <a href="client.html">📱 Client</a>
+    </div>
+
     <div class="container">
         <div class="logo">🏋️</div>
         <h1>Evonyte Coach</h1>
@@ -383,19 +416,6 @@ Co było w v1.0.31:
             </a>
 
             <button onclick="logout()" class="btn logout-btn">🚪 Wyloguj się</button>
-        </div>
-
-        <!-- App Switcher -->
-        <div style="margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: 12px; text-align: center;">
-            <p style="color: #64748b; margin-bottom: 12px; font-size: 0.9em;">Inne aplikacje Evonyte:</p>
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95em;">
-                    💻 Admin App
-                </a>
-                <a href="coach.html" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95em;">
-                    🏋️ Coach App
-                </a>
-            </div>
         </div>
 
         <footer>

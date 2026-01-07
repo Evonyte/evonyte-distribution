@@ -26,28 +26,65 @@
             width: 100%;
             background: white;
             border-radius: 20px;
-            padding: 50px 40px;
+            padding: 30px 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .logo {
             text-align: center;
-            font-size: 4em;
-            margin-bottom: 10px;
+            font-size: 3em;
+            margin-bottom: 5px;
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 2em;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1em;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* App Switcher - Fixed Position Top Right */
+        .app-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .app-switcher a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+        }
+
+        .app-switcher a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-switcher a.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
         }
 
         .app-info {
@@ -166,47 +203,16 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
         }
-
-        .app-switcher {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .app-switcher p {
-            color: #64748b;
-            margin-bottom: 12px;
-            font-size: 0.9em;
-        }
-
-        .app-switcher-links {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .app-switcher-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: transform 0.2s;
-        }
-
-        .app-switcher-links a:hover {
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
+    <!-- App Switcher - Fixed Top Right -->
+    <div class="app-switcher">
+        <a href="admin.html">💻 Admin</a>
+        <a href="coach.html">🏋️ Coach</a>
+        <a href="client.html" class="active">📱 Client</a>
+    </div>
+
     <div class="container">
         <div class="logo">🏃</div>
         <h1>Evonyte Client</h1>
@@ -267,18 +273,6 @@
         <a href="https://raw.githubusercontent.com/Evonyte/evonyte-distribution/master/evonyte-client-v0.3.0.apk" class="btn btn-download" download>
             ⬇️ Pobierz Evonyte Client v0.3.0 (Android APK)
         </a>
-
-        <div class="app-switcher">
-            <p>Inne aplikacje Evonyte:</p>
-            <div class="app-switcher-links">
-                <a href="index.html" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    💻 Admin App
-                </a>
-                <a href="coach.html" style="background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);">
-                    👨‍🏫 Coach App
-                </a>
-            </div>
-        </div>
     </div>
 </body>
 </html>
